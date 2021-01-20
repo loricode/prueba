@@ -23,9 +23,10 @@ class StudentController extends Controller
      */
     public function create(Request $request)
     {
-        $student = new Student;
-        $data = $request->json()->all();
-        $codigo = $data['codigo'];
+
+        $student = new Student; //creo un objeto
+        $data = $request->json()->all(); //tomo las respuesta de la peticion ajax
+        $codigo = $data['codigo']; //tomo los valores que estan en la llave de objeto data
         $nombre = $data['nombre']; 
         $apellido = $data['apellido'];
         $direccion = $data['direccion'];
@@ -43,7 +44,7 @@ class StudentController extends Controller
         $student->ciudad_origen =  $origen;
         $student->nacionalidad = $nacionalidad;
         $student->programa = $data['programa'];
-        $student->save();
+        $student->save(); //guardo la informacion en la tabla students
         return json_encode(["msg"=>"added student"]); 
     }
 
@@ -64,9 +65,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+       
     }
 
     /**
@@ -75,9 +76,33 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $student = new Student; //creo un objeto
+        $data = $request->json()->all(); //tomo las respuesta de la peticion ajax
+        $id = $data['id'];
+
+        $codigo = $data['codigo']; //tomo los valores que estan en la llave de objeto data
+        $nombre = $data['nombre']; 
+        $apellido = $data['apellido'];
+        $direccion = $data['direccion'];
+        $telefono = $data['telefono'];
+        $residencia = $data['residencia'];
+        $origen = $data['origen'];
+        $nacionalidad = $data['nacionalidad'];
+        $programa = $data['programa'];
+        $student = $id;
+        $student->codigo = $codigo;
+        $student->nombres = $nombre; 
+        $student->apellidos = $apellido; 
+        $student->direccion = $direccion;
+        $student->telefono = $telefono;
+        $student->ciudad_residencia = $residencia; 
+        $student->ciudad_origen =  $origen;
+        $student->nacionalidad = $nacionalidad;
+        $student->programa = $data['programa'];
+        $student->save(); //guardo la informacion en la tabla students
+        return json_encode(["msg"=>"updated student"]);
     }
 
     /**
@@ -87,9 +112,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+         $student = Student::find($id);
+         return view('update')->with('student',$student);
     }
 
     /**
@@ -100,6 +126,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
+        //elimino el registro por id y despues redirecciono a la pagina dashboard
         Student::destroy($id);
         return redirect('/dashboard');
     }

@@ -38,7 +38,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  const oriFrom = document.getElementById('origen')
  const nacForm = document.getElementById('nacionalidad')
  const programForm = document.getElementById('programa') // input programa
- 
+ const btnUpdate = document.getElementById('btnupdate') 
+
+
  btnForm.addEventListener('click', async() => {
     
 
@@ -59,9 +61,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     console.log(response)
     if(response.status===200){
         clearInput()
+        
     }
 
-}) 
+}); 
 
 function clearInput(){
     codeForm.value=''
@@ -74,6 +77,8 @@ function clearInput(){
     nacForm.value=''
     programForm.value=''
 }
+
+
 
 
   //const response = axios.delete('http://127.0.0.1:8000/student/'+id);

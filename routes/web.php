@@ -19,9 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/dashboard/update/{id}', [StudentController::class, 'update']);
 Route::get('/student', [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'create']);
+Route::put('/student', [StudentController::class, 'edit']);
 Route::get('/dashboard/{id}', [StudentController::class, 'destroy']);
 
 Route::get('/dashboard', function (Request $request) {

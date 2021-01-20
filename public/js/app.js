@@ -3864,6 +3864,7 @@ var oriFrom = document.getElementById('origen');
 var nacForm = document.getElementById('nacionalidad');
 var programForm = document.getElementById('programa'); // input programa
 
+var btnUpdate = document.getElementById('btnupdate');
 btnForm.addEventListener('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
   var obj, response;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
