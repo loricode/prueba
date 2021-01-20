@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/student', [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'create']);
+Route::get('/dashboard/{id}', [StudentController::class, 'destroy']);
+
 Route::get('/dashboard', function (Request $request) {
 
     $students = Student::all();

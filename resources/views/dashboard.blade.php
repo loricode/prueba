@@ -149,12 +149,13 @@
                        <th scope="col">Ciudad Origen</th>
                        <th scope="col">Nacionalidad</th>
                        <th scope="col">Programa</th>
+                       <th scope="col">Opcion</th>
                      </tr>
                    </thead>
                 <tbody>
                   
                       @foreach($students as $student)
-                      <tr>
+                      <tr >
                          <td>{{$student->codigo}}</td>
                          <td>{{$student->nombres}}</td>
                          <td>{{$student->apellidos}}</td>  
@@ -164,6 +165,11 @@
                          <td>{{$student->ciudad_origen}}</td> 
                          <td>{{$student->nacionalidad}}</td> 
                          <td>{{$student->programa}}</td>   
+                         <td>
+                            <a href="dashboard/{{$student->id}}" class="btn btn-danger btn-sm">
+                               Delete
+                            </a>
+                          </td> 
                          </tr>   
                       @endforeach
                  

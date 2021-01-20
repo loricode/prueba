@@ -39,7 +39,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  const nacForm = document.getElementById('nacionalidad')
  const programForm = document.getElementById('programa') // input programa
  
- 
  btnForm.addEventListener('click', async() => {
     
 
@@ -75,3 +74,10 @@ function clearInput(){
     nacForm.value=''
     programForm.value=''
 }
+
+
+  //const response = axios.delete('http://127.0.0.1:8000/student/'+id);
+ 
+
+
+
