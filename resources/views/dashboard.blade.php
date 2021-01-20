@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <x-app-layout>
     <x-slot name="header">
@@ -20,6 +19,7 @@
                      <div class="col-sm">
                      <div class="input-group mb-3">
                          <input 
+                             id="codigo"
                              type="text"
                              class="form-control"
                              placeholder="Codigo" 
@@ -30,6 +30,7 @@
                       <div class="col-sm">
                        <div class="input-group mb-3">
                          <input 
+                             id="nombre"
                              type="text"
                              class="form-control"
                              placeholder="Nombres" 
@@ -42,6 +43,7 @@
                       <div class="col-sm">
                       <div class="input-group mb-3">
                          <input 
+                             id="apellido"
                              type="text"
                              class="form-control"
                              placeholder="Apellidos" 
@@ -53,6 +55,7 @@
                     <div class="col-sm">
                       <div class="input-group mb-3">
                          <input 
+                              id="direccion"
                              type="text"
                              class="form-control"
                              placeholder="Direccion" 
@@ -67,6 +70,7 @@
                        <div class="col-sm">
                          <div class="input-group mb-3">
                            <input 
+                              id="telefono"
                               type="text"
                               class="form-control"
                               placeholder="Telefono" 
@@ -76,7 +80,8 @@
 
                        <div class="col-sm">
                         <div class="input-group mb-3">
-                          <input 
+                          <input
+                             id="residencia"  
                              type="text"
                              class="form-control"
                              placeholder="Ciudad Residencia" 
@@ -88,7 +93,8 @@
 
                      <div class="col-sm">
                         <div class="input-group mb-3">
-                          <input 
+                          <input
+                            id="origen" 
                             type="text"
                             class="form-control"
                             placeholder="Ciudad Origen" 
@@ -100,6 +106,7 @@
                       <div class="col-sm">
                         <div class="input-group mb-3">
                          <input 
+                            id="nacionalidad"
                             type="text"
                             class="form-control"
                             placeholder="Nacionalidad" 
@@ -145,8 +152,9 @@
                      </tr>
                    </thead>
                 <tbody>
-                  <tr>
+                  
                       @foreach($students as $student)
+                      <tr>
                          <td>{{$student->codigo}}</td>
                          <td>{{$student->nombres}}</td>
                          <td>{{$student->apellidos}}</td>  
@@ -155,9 +163,10 @@
                          <td>{{$student->ciudad_residencia}}</td> 
                          <td>{{$student->ciudad_origen}}</td> 
                          <td>{{$student->nacionalidad}}</td> 
-                         <td>{{$student->programa}}</td>    
+                         <td>{{$student->programa}}</td>   
+                         </tr>   
                       @endforeach
-                 </tr>
+                 
                 </tbody>
             </table>
                 </div>

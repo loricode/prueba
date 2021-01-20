@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Models\Student;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/student', [StudentController::class, 'create']);
+Route::post('/student', [StudentController::class, 'create']);
 Route::get('/dashboard', function (Request $request) {
 
     $students = Student::all();
